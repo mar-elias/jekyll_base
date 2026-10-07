@@ -1,0 +1,2 @@
+require "comment_remover"
+
