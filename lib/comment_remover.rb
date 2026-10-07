@@ -10,7 +10,9 @@ module Jekyll
   class CommentRemover
     class << self
       def process(site)
-        return unless production_mode?
+
+        # Note: This will let it apply only in production mode (i.e. comments in local builds won't be removed)
+        # return unless production_mode?
 
         Jekyll.logger.info "CommentRemover:", "Removing comments from generated files..."
 
