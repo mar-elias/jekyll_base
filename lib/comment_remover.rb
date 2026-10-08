@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Description: Jekyll plugin to remove comments from HTML, CSS, and JavaScript files
-# Only runs in production mode (JEKYLL_ENV=production)
+
 # Shortcomings:
 # 1. Won't remove js '//' comments after code (in .js files), for this you'll need a parser.
 # 2. Won't remove '//' comments inside <script> tags (in .html files).
@@ -11,7 +11,7 @@ module Jekyll
     class << self
       def process(site)
 
-        # Note: This will let it apply only in production mode (i.e. comments in local builds won't be removed)
+        # Note: This will let it apply only in production mode (i.e. comments in local builds won't be removed) i.e. JEKYLL_ENV=production
         # return unless production_mode?
 
         Jekyll.logger.info "CommentRemover:", "Removing comments from generated files..."
