@@ -1,0 +1,32 @@
+image: ruby:latest
+
+before_script:
+  - apt-get update -qy
+  - apt-get install -y nodejs
+
+  - gem cleanup
+  - gem install jekyll
+  - gem install bundler
+  - bundle install
+
+pages:
+  stage: deploy
+  variables:
+    FF_USE_FASTZIP: "true"
+    ARTIFACT_COMPRESSION_LEVEL: "fastest"
+  script:
+  - bundle exec jekyll build -d public
+  artifacts:
+    paths:
+    - public
+  # This will make it build the website only when a new tag is pushed. Note that `rules:` does not work with `only:` so the latter is removed.
+  #only:
+  #- master
+  rules:
+  - if: $CI_COMMIT_TAG
+  interruptible: true
+
+# Added caching on 20250323
+cache:
+  paths:
+    - vendor/
