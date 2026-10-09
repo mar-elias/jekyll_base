@@ -25,6 +25,10 @@ group :jekyll_plugins do
 end
 ```
 
+4. To include a `gitlab-ci.yml`:
+include:
+  - remote: "https://raw.githubusercontent.com/mar-elias/jekyll_base/refs/heads/main/gitlab/.gitlab-ci.yml"
+
 ## 2. Files in this base:
 1. `Gemfile` is a local file limited to this theme; it isn't copied to the child websites
 2. Local `.html` files outside of the folders defined in `site-theme.gemspec` aren't copied either.
