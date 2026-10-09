@@ -26,4 +26,7 @@ end
 ```
 
 ## 2. Files in this base:
-`Gemfile` is a local file limited to this theme; it isn't copied
+1. `Gemfile` is a local file limited to this theme; it isn't copied to the child websites
+2. Local `.html` files outside of the folders defined in `site-theme.gemspec` aren't copied either.
+3. In `_config.yml` some values are excluded from being inherited. These default values are defined in
+   https://github.com/jekyll/jekyll/blob/v4.4.1/lib/jekyll/configuration.rb#L7

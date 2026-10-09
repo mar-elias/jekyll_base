@@ -1,3 +1,5 @@
+# Note this file isn't included in the child website
+
 source "https://rubygems.org"
 
 # Instead locally install latest available version
