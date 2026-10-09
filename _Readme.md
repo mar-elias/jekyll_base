@@ -110,3 +110,5 @@ include:
       }.each_with_object(Configuration.new) { |(k, v), hsh| hsh[k] = v.freeze }.freeze
    ```
 
+## TODO:
+- Include files, even partially, by including variables in the _config
