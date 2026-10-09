@@ -6,6 +6,8 @@
 # 1. Won't remove js '//' comments after code (in .js files), for this you'll need a parser.
 # 2. Won't remove '//' comments inside <script> tags (in .html files).
 
+# Note: For this file to work without the base theme, just put it inside the `_plugins` folder of the jekyll site.
+
 module Jekyll
   class CommentRemover
     class << self
