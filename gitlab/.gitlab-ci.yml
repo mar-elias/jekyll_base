@@ -1,4 +1,4 @@
-image: ruby:latest
+image: ruby:3.4.11 # better to pin version rather than use ruby:latest https://github.com/ruby/ruby/releases
 
 before_script:
   - apt-get update -qy
@@ -16,6 +16,7 @@ pages:
     ARTIFACT_COMPRESSION_LEVEL: "fastest"
   script:
   - bundle exec jekyll build -d public
+  # - JEKYLL_ENV=production bundle exec jekyll build -d public # runs jekyll in production mode (no longer needed)
   artifacts:
     paths:
     - public
@@ -26,7 +27,6 @@ pages:
   - if: $CI_COMMIT_TAG
   interruptible: true
 
-# Added caching on 20250323
 cache:
   paths:
     - vendor/
