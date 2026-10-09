@@ -1,6 +1,6 @@
 # Mar-Elias jekyll base (theme)
 
-To use it:
+## 1. To use it:
 
 1. Add to `_config.yml`:
 ```
@@ -24,3 +24,6 @@ group :jekyll_plugins do
   gem "mar-elias-jekyll-base", path: "../jekyll_base"
 end
 ```
+
+## 2. Files in this base:
+`Gemfile` is a local file limited to this theme; it isn't copied
