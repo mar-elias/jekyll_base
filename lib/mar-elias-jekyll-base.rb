@@ -1,2 +1,2 @@
-require "comment_remover"
-require "404"
+require "script_comment_remover"
+require "page_404"
